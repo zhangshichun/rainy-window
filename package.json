@@ -1,12 +1,14 @@
 {
-  "name": "rainy",
-  "version": "1.0.0",
+  "name": "the-rainy",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "author": "https://github.com/zhangshichun",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development rollup -w -c"
+    "dev": "cross-env NODE_ENV=development rollup -w -c",
+    "build": "cross-env NODE_ENV=production rollup -c"
   },
+  "files": ["dist"],
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@rollup/plugin-babel": "^5.3.1",
@@ -23,6 +25,6 @@
     "typescript": "^4.6.2"
   },
   "dependencies": {
-    "gsap": "3.10.4"
+    "gsap": "^3.0.0"
   }
 }
