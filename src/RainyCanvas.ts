@@ -44,7 +44,6 @@ class RainyCanvas {
   }
 
   render() {
-    // console.log(1)
     this.keeper.checkIntersects()
     this.keeper.drawDrops()
   }

@@ -35,8 +35,6 @@ class Drop {
     this.speedX = speedX;
     this.speedY = speedY;
     this.moveTarget = [this.x + speedX * duration, this.y + speedY * duration]
-    console.log("🔨🔪@zsc:: ~ file: Drop.ts ~ line 37 ~ Drop ~ setSpeed ~ this.y", this.y)
-    console.log("🔨🔪@zsc:: ~ file: Drop.ts ~ line 37 ~ Drop ~ setSpeed ~ this.moveTarget", this.moveTarget)
     gsap.to(this, {
       duration: duration,
       x: this.moveTarget[0],

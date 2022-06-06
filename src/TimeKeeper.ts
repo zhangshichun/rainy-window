@@ -16,7 +16,6 @@ export class TimeKeeper {
   private handleEvents() {
     const now = Date.now()
     while(this.events[0] && this.events[0].timestamp <= now) {
-      console.log("🔨🔪@zsc:: ~ file: TimeKeeper.ts ~ line 19 ~ TimeKeeper ~ handleEvents ~ this.events", this.events)
       const event = this.events.shift()
       event.callback?.()
     }
