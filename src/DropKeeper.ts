@@ -93,6 +93,16 @@ class DropKeeper {
     const duration = getRandomInt(4,10)
     this.drops[index].setSpeed(0, speedY, duration)
   }
+
+  removeDropsOut() {
+    this.drops = this.drops.filter(drop => {
+      const { width, height } = this.environment.glassCanvas;
+      return drop.x + drop.r >= 0 
+              && drop.x - drop.r <= width 
+              && drop.y + drop.r >= 0
+              && drop.y - drop.r <= height
+    })
+  }
 }
 
 export { DropKeeper }

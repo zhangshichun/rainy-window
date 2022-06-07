@@ -9,7 +9,6 @@ class RainyCanvas {
   backgroundCanvas: HTMLCanvasElement;
   glassCanvas: HTMLCanvasElement;
   reflection: HTMLCanvasElement;
-  drops: Drop[] = [];
   keeper: DropKeeper;
   timeKeeper: TimeKeeper = new TimeKeeper()
 
@@ -44,6 +43,7 @@ class RainyCanvas {
   }
 
   render() {
+    this.keeper.removeDropsOut()
     this.keeper.checkIntersects()
     this.keeper.drawDrops()
   }
