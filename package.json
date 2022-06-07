@@ -1,7 +1,8 @@
 {
   "name": "rainy-window",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "dist/umd/index.js",
+  "module": "dist/esm/index.js",
   "license": "MIT",
   "author": "https://github.com/zhangshichun",
   "scripts": {
