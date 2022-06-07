@@ -3,7 +3,9 @@
 ## 安装
 
 ```shell
-
+yarn add rainy-window
+# or
+npm install rainy-window
 ```
 
 ## 使用
