@@ -1,4 +1,3 @@
-import babel from '@rollup/plugin-babel';
 import path from 'path';
 import nodeResolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json';
