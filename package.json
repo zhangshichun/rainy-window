@@ -6,8 +6,10 @@
   "license": "MIT",
   "author": "https://github.com/zhangshichun",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development rollup -w -c",
-    "build": "cross-env NODE_ENV=production rollup -c"
+    "dev": "cross-env NODE_ENV=development rollup -w -c rollup.umd.config.js",
+    "build": "run-p \"build:*\"",
+    "build:umd": "cross-env NODE_ENV=production rollup -c rollup.umd.config.js",
+    "build:esm": "cross-env NODE_ENV=production rollup -c rollup.esm.config.js"
   },
   "files": [
     "dist"
@@ -21,11 +23,14 @@
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
     "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
     "rollup": "^2.68.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-serve": "^1.1.0",
     "tslib": "^2.3.1",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "esbuild": "^0.14.43",
+    "rollup-plugin-esbuild": "^4.9.1"
   },
   "dependencies": {
     "gsap": "^3.0.0"
