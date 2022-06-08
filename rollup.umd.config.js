@@ -1,11 +1,11 @@
 import babel from '@rollup/plugin-babel';
 import path from 'path';
 import nodeResolve from '@rollup/plugin-node-resolve'
-import typeScript from '@rollup/plugin-typescript'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload';
 import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
+import esbuild from 'rollup-plugin-esbuild'
 
 const isProduction = process.env.NODE_ENV === 'production'
 const pluginsWithEnv = isProduction ? [] : [serve({
@@ -25,10 +25,13 @@ export default {
     }
   ],
   plugins: [
-    typeScript(),
+    esbuild({
+      target: 'es2015'
+    }),
     babel({
       presets: ['@babel/preset-env'],
       exclude: 'node_modules/**',
+      babelHelpers: 'bundled'
     }),
     nodeResolve(),
     json(),
