@@ -1,6 +1,6 @@
 {
   "name": "rainy-window",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
   "license": "MIT",
@@ -9,7 +9,9 @@
     "dev": "cross-env NODE_ENV=development rollup -w -c",
     "build": "cross-env NODE_ENV=production rollup -c"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@rollup/plugin-babel": "^5.3.1",
