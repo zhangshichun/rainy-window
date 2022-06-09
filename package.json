@@ -6,8 +6,15 @@
   "license": "MIT",
   "author": "https://github.com/zhangshichun",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development rollup -w -c rollup.umd.config.js",
+    "说明0": "--------------------调试简单demo：是这条脚本↓-------------------------------------",
+    "dev:umd": "cross-env NODE_ENV=development rollup -w -c rollup.umd.config.js",
+    "说明1": "--------------------调试在vue3项目中的demo：是这条脚本↓----------------------------",
+    "dev:esm": "run-p watch:esm serve:vue3",
+    "说明2": "--------------------打包构建：是这条脚本↓-----------------------------------------",
     "build": "run-p \"build:*\"",
+    "predev:esm": "npm run build:esm",
+    "serve:vue3": "cd ./examples/vue3 && yarn && yarn serve",
+    "watch:esm": "cross-env NODE_ENV=development rollup -w -c rollup.esm.config.js",
     "build:umd": "cross-env NODE_ENV=production rollup -c rollup.umd.config.js",
     "build:esm": "cross-env NODE_ENV=production rollup -c rollup.esm.config.js"
   },
