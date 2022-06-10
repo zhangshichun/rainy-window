@@ -1,11 +1,13 @@
 import { RainyCanvas } from "./RainyCanvas";
 
 async function rain(target: string | HTMLImageElement , url: string , options: any) {
-  if (typeof target != 'string') {
-    return // todo support Element
+  let targetEl
+  if (typeof target === 'string') {
+    targetEl = document.getElementById(target);
+  } else {
+    targetEl = target
   }
-  const targetEl = document.getElementById(target);
-  const rainyCanvas = new RainyCanvas(targetEl, url)
+  const rainyCanvas = new RainyCanvas(targetEl, url, options)
   return rainyCanvas
 }
 
