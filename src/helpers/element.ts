@@ -11,8 +11,11 @@ export const createImageElement = (url: string): Promise<HTMLImageElement> => {
   })
 }
 
-export const getCtx = (el: HTMLCanvasElement) => {
+export const getCtx = (el: HTMLCanvasElement): CanvasRenderingContext2D => {
   const ctx = el.getContext('2d')
+  if (!ctx) {
+    throw new Error('the 2dContext should not be null')
+  }
   ctx.imageSmoothingEnabled = false;
   return ctx;
 }

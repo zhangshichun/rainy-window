@@ -10,17 +10,18 @@ export type Environment = {
 export type DropHooks = {
   onBirthChild?: (drop: Drop) => void
 }
+
 class Drop {
   public speedX = 0;
   public speedY = 0;
-  private moveTarget = null;
+  private moveTarget?: [ number, number ];
   public direction = 0;
   public ctx: CanvasRenderingContext2D;
   public environment: Environment;
   public minReflectionRatio = 0.4;
   public maxReflectionRatio = 0.8;
   public hooks: DropHooks = {};
-  private birthTimer: NodeJS.Timer;
+  private birthTimer?: NodeJS.Timer;
 
   constructor(public x: number, public y: number, public r: number) {
     
@@ -90,11 +91,14 @@ class Drop {
   prepareToBirth() {
     if (this.birthTimer) {
       clearTimeout(this.birthTimer)
-      this.birthTimer = null
+      this.birthTimer = undefined
     }
     const birthAndBirth = () => {
       if (this.speedX === 0 && this.speedY === 0) {
         return;
+      }
+      if (!this.moveTarget) {
+        return
       }
       if (Math.sqrt(Math.pow(this.moveTarget[0] - this.x, 2) + Math.pow(this.moveTarget[1] - this.y, 2)) <= this.r) {
         return;
