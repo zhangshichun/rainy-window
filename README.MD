@@ -1,5 +1,9 @@
 # rainy window
 
+![](https://pic.zhangshichun.top/pic/20220606-03-copy.gif)
+
+![](https://pic.zhangshichun.top/pic/20220606-01.gif)
+
 ## 安装
 
 ```shell
