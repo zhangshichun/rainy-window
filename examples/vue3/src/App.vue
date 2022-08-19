@@ -4,7 +4,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import rain from '../../../'
+import rain from 'rainy-window'
 
 onMounted(() => {
 rain('myImage', 'http://pic.zhangshichun.top/pic/20220606-02.jpg')
