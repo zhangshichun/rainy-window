@@ -3,6 +3,7 @@
   "version": "0.0.6",
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
   "license": "MIT",
   "author": "https://github.com/zhangshichun",
   "scripts": {
@@ -12,6 +13,7 @@
     "dev:esm": "run-p watch:esm serve:vue3",
     "说明2": "--------------------打包构建：是这条脚本↓-----------------------------------------",
     "build": "run-p \"build:*\"",
+    "build-a": "npm-run-all -p build:esm build:umd -s serve:vue3",
     "predev:esm": "npm run build:esm",
     "serve:vue3": "cd ./examples/vue3 && yarn && yarn serve",
     "watch:esm": "cross-env NODE_ENV=development rollup -w -c rollup.esm.config.js",
